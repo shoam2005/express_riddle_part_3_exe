@@ -11,9 +11,10 @@
 //    - save the time using player.recordTime()
 // 5. After the loop, call player.showStats() to show total time and average time per riddle.
 import PromptSync from 'prompt-sync';
-import AllRiddles from './riddles/index.js';
+
 import Player from './classes/Player.js';
 import Riddle from './classes/Riddle.js';
+// import{getAllRiddles,createRiddle,updateRiddle,deleteRiddle} from './api/riddlesApi.js'
 import { findPlayerByName, createPlayer, updatePlayer, getAllPlayers } from './api/playersApi.js';
 
 
@@ -102,7 +103,7 @@ while (choice !== '0') {
 
 const level = prompt('Choose difficulty:easy/medium/hard')
 
-AllRiddles.forEach(riddle => {
+getAllRiddles().forEach(riddle => {
 
 
     if (riddle.difficulty === level) {
